@@ -2135,3 +2135,13 @@ DEBUG:PIL.Image:Importing XVThumbImagePlugin
 INFO:books.helpers.logging_helper:New book created
 INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/models/book.py changed, reloading.
 INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/models/book.py changed, reloading.
+WARNING:django.request:Not Found: /orders/
+WARNING:django.request:Not Found: /
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/project/urls.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/project/urls.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/project/urls.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/project/urls.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/project/urls.py changed, reloading.
+WARNING:django.request:Unauthorized: /api/v1/protected/
+WARNING:django.request:Unauthorized: /api/v1/protected/
+WARNING:django.request:Unauthorized: /api/v1/books/
