@@ -1,17 +1,17 @@
 from rest_framework_simplejwt.tokens import RefreshToken
 from .author_service import AuthorService
-from helpers.logging_helper import logger
-from helpers.auth_utils import check_password, hash_raw_password
+from books.helpers.logging_helper import logger
+from books.helpers.auth_utils import check_password, hash_raw_password
 
 author_service = AuthorService()
 class AuthorAuthService:
 
     def check_password(email: str, password: str) -> bool:
-        user_obj = author_service.get_user_or_none(email=email)
+        user_obj = author_service.get_author_or_none(email=email)
         
     
     def is_email_already_created(self, email:str) -> bool:
-        user = author_service.get_user_or_none(email=email)
+        user = author_service.get_author_or_none(email=email)
         if not user:
             return False
         return True

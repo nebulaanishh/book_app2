@@ -1,12 +1,16 @@
-from rest_framework.decorators import api_view
+from django.contrib.auth import get_user_model
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.pagination import PageNumberPagination
+from rest_framework.permissions import IsAuthenticated
 from books.builders.response_builders import ResponseBuilder
 from books.services.book_service import BookService
 from books.services.review_service import ReviewService
 from books.helpers.logging_helper import logger
+from books.permissions import IsLoggedIn, is_user_or_admin
 
 
 @api_view(['GET', 'POST'])
+@permission_classes([IsLoggedIn])
 def book_list(request):
     response_builder = ResponseBuilder()
     book_service = BookService()
@@ -30,6 +34,7 @@ def book_list(request):
 
 
 @api_view(['GET', 'PUT', "DELETE"])
+@permission_classes([IsLoggedIn])
 def book_detail(request, idx):
     response_builder = ResponseBuilder()
     book_service = BookService()
@@ -40,6 +45,11 @@ def book_detail(request, idx):
         logger.error(f"BookDetailView get :: exception :: {e}")
         return response_builder.result_object({"error": f"{e}"}).fail().bad_request_400().get_response()
     
+    if request.method in ["PUT", "DELETE"]:
+        has_permissions = is_user_or_admin(request, idx)
+        if not has_permissions:
+            return response_builder.result_object({"error": "You don't have permissions to access this resource"}).get_response()
+
     if request.method=="GET":
         result = {
             'book': book,
@@ -59,3 +69,10 @@ def book_detail(request, idx):
         if is_book_deleted:
             return response_builder.get_200_success_response("Book Deleted Successfully")
         return response_builder.result_object({'error': f"Couldn't Delete Book :: {e} "}).get_response()
+
+
+@api_view(['GET'])
+@permission_classes([IsLoggedIn])
+def protected_view(request):
+    response_builder = ResponseBuilder()
+    return response_builder.result_object({"message": "This is protected View"}).get_response()

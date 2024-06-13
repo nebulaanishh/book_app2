@@ -1,5 +1,7 @@
 from django.db import models
 from django.db.models import Avg
+from django.db.models.signals import pre_save
+from django.dispatch import receiver
 
 from books.models.base import BaseModel
 from books.models.user import Author

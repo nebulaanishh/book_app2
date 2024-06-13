@@ -1,5 +1,5 @@
-from helpers.logging_helper import logger
-from models import Author
+from books.helpers.logging_helper import logger
+from books.models.user import Author
 
 class AuthorService:
     def get_author_or_none(self, email: str):

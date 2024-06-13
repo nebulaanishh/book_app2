@@ -1544,3 +1544,594 @@ INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/services/
 INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/services/book_service.py changed, reloading.
 INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/services/book_service.py changed, reloading.
 INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/services/book_service.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/user_api.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/user_api.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/user_api.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/user_api.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/serializers/user_login_serializer.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/user_api.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/services/author_service.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/services/author_service.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/services/author_auth_service.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/urls.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/urls.py changed, reloading.
+WARNING:django.request:Not Found: /custom/api/v1/login/
+INFO:books.helpers.logging_helper:Serialized data : AuthorSerializer(data=<QueryDict: {'first_name': ['Balaram'], 'last_name': ['Neupane'], 'email': ['user4@user.com'], 'password': ['Password123']}>):
+    id = IntegerField(label='ID', read_only=True)
+    first_name = CharField(max_length=100)
+    last_name = CharField(max_length=100)
+    email = EmailField(max_length=100, validators=[<UniqueValidator(queryset=Author.objects.all())>])
+    password = CharField(max_length=64, write_only=True)
+ERROR:django.request:Internal Server Error: /api/v1/register/
+Traceback (most recent call last):
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/books/views/user_api.py", line 21, in register_user
+    if AuthorAuthService().is_email_already_created(email):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/books/services/author_auth_service.py", line 14, in is_email_already_created
+    user = author_service.get_user_or_none(email=email)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AuthorService' object has no attribute 'get_user_or_none'. Did you mean: 'get_author_or_none'?
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/services/author_auth_service.py changed, reloading.
+INFO:books.helpers.logging_helper:Serialized data : AuthorSerializer(data=<QueryDict: {'first_name': ['Balaram'], 'last_name': ['Neupane'], 'email': ['user4@user.com'], 'password': ['Password123']}>):
+    id = IntegerField(label='ID', read_only=True)
+    first_name = CharField(max_length=100)
+    last_name = CharField(max_length=100)
+    email = EmailField(max_length=100, validators=[<UniqueValidator(queryset=Author.objects.all())>])
+    password = CharField(max_length=64, write_only=True)
+WARNING:django.request:Not Found: /custom/authenticated_view/
+WARNING:django.request:Not Found: /custom/api/v1/login/
+INFO:books.helpers.logging_helper:Email: user3@user.com  :: Password: Password123
+INFO:books.helpers.logging_helper:Check here: Email: user3@user.com Password: Password123
+ERROR:django.request:Internal Server Error: /api/v1/login/
+Traceback (most recent call last):
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/books/views/user_api.py", line 47, in login
+    is_logged_in, auth_token = user_auth_service.login(email, password)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/books/services/author_auth_service.py", line 27, in login
+    user = author_service.get_author_by_email(email=email)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/books/services/author_service.py", line 15, in get_author_by_email
+    user = Author.objects.get(email=email)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+books.models.user.Author.DoesNotExist: Author matching query does not exist.
+INFO:books.helpers.logging_helper:Serialized data : AuthorSerializer(data=<QueryDict: {'first_name': ['Balaram'], 'last_name': ['Neupane'], 'email': ['user4@user.com'], 'password': ['Password123']}>):
+    id = IntegerField(label='ID', read_only=True)
+    first_name = CharField(max_length=100)
+    last_name = CharField(max_length=100)
+    email = EmailField(max_length=100, validators=[<UniqueValidator(queryset=Author.objects.all())>])
+    password = CharField(max_length=64, write_only=True)
+WARNING:django.request:Bad Request: /api/v1/register/
+INFO:books.helpers.logging_helper:Email: user4@user.com  :: Password: Password123
+INFO:books.helpers.logging_helper:Check here: Email: user4@user.com Password: Password123
+INFO:books.helpers.logging_helper:Fetched the following user:: Balaram Neupane
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/serializers/user_login_serializer.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/models/user.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/models/user.py changed, reloading.
+WARNING:django.request:Not Found: /favicon.ico
+INFO:books.helpers.logging_helper:Serialized data : AuthorSerializer(data=<QueryDict: {'first_name': ['Balaram'], 'last_name': ['Neupane'], 'email': ['user5@user.com'], 'password': ['Password123']}>):
+    id = IntegerField(label='ID', read_only=True)
+    first_name = CharField(max_length=100)
+    last_name = CharField(max_length=100)
+    email = EmailField(max_length=100, validators=[<UniqueValidator(queryset=Author.objects.all())>])
+    password = CharField(max_length=64, write_only=True)
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/user_api.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/user_api.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/book_api.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/project/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/project/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/book_api.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/book_api.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/book_api.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/urls.py changed, reloading.
+ERROR:django.request:Internal Server Error: /api/v1/protected/
+Traceback (most recent call last):
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 415, in initial
+    self.check_permissions(request)
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 331, in check_permissions
+    for permission in self.get_permissions():
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 278, in get_permissions
+    return [permission() for permission in self.permission_classes]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'BasePermissionMetaclass' object is not iterable
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/book_api.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/book_api.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/book_api.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/book_api.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/book_api.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/project/settings.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/book_api.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/book_api.py changed, reloading.
+ERROR:django.request:Internal Server Error: /api/v1/protected/
+Traceback (most recent call last):
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 415, in initial
+    self.check_permissions(request)
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 331, in check_permissions
+    for permission in self.get_permissions():
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 278, in get_permissions
+    return [permission() for permission in self.permission_classes]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'BasePermissionMetaclass' object is not iterable
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/book_api.py changed, reloading.
+WARNING:django.request:Unauthorized: /api/v1/protected/
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/permissions/permissions.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/book_api.py changed, reloading.
+WARNING:django.request:Unauthorized: /api/v1/protected/
+INFO:books.helpers.logging_helper:Email: user4@user.com  :: Password: Password123
+INFO:books.helpers.logging_helper:Check here: Email: user4@user.com Password: Password123
+INFO:books.helpers.logging_helper:Fetched the following user:: Balaram Neupane
+WARNING:django.request:Unauthorized: /api/v1/protected/
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/book_api.py changed, reloading.
+WARNING:django.request:Unauthorized: /api/v1/protected/
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/permissions/permissions.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/book_api.py changed, reloading.
+WARNING:django.request:Unauthorized: /api/v1/protected/
+WARNING:django.request:Unauthorized: /api/v1/protected/
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/book_api.py changed, reloading.
+WARNING:django.request:Unauthorized: /api/v1/protected/
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/book_api.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/project/settings.py changed, reloading.
+WARNING:django.request:Unauthorized: /api/v1/protected/
+WARNING:django.request:Unauthorized: /api/v1/protected/
+INFO:books.helpers.logging_helper:Email: user4@user.com  :: Password: Password123
+INFO:books.helpers.logging_helper:Check here: Email: user4@user.com Password: Password123
+INFO:books.helpers.logging_helper:Fetched the following user:: Balaram Neupane
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/book_api.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/book_api.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/permissions/permissions.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/permissions/permissions.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/permissions/permissions.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/permissions/permissions.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/permissions/permissions.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/permissions/permissions.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/book_api.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/book_api.py changed, reloading.
+ERROR:django.request:Internal Server Error: /api/v1/books/1/
+Traceback (most recent call last):
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 497, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 415, in initial
+    self.check_permissions(request)
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 332, in check_permissions
+    if not permission.has_permission(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: IsOwnerOrAdmin.has_permission() missing 1 required positional argument: 'obj'
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/book_api.py changed, reloading.
+ERROR:books.helpers.logging_helper:BookDetailView get :: exception :: ['“1” is not a valid UUID.']
+WARNING:django.request:Bad Request: /api/v1/books/1/
+INFO:books.helpers.logging_helper:Email: user@user.com  :: Password: Password123
+INFO:books.helpers.logging_helper:Check here: Email: user@user.com Password: Password123
+INFO:books.helpers.logging_helper:Fetched the following user:: Arya shakya
+WARNING:django.request:Unauthorized: /api/v1/books/3777e335-1465-4135-ba57-0c346d925ef1/
+ERROR:books.helpers.logging_helper:BookDetailView get :: exception :: Book matching query does not exist.
+WARNING:django.request:Bad Request: /api/v1/books/3c4b725d-55cf-4dcc-a83c-e35c83655484/
+ERROR:django.request:Internal Server Error: /api/v1/books/3777e335-1465-4135-ba57-0c346d925ef1
+Traceback (most recent call last):
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/utils/deprecation.py", line 136, in __call__
+    response = self.process_response(request, response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/middleware/common.py", line 108, in process_response
+    return self.response_redirect_class(self.get_full_path_with_slash(request))
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/middleware/common.py", line 87, in get_full_path_with_slash
+    raise RuntimeError(
+RuntimeError: You called this URL via PUT, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining PUT data. Change your form to point to 127.0.0.1:8000/api/v1/books/3777e335-1465-4135-ba57-0c346d925ef1/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+ERROR:django.request:Internal Server Error: /api/v1/books/3777e335-1465-4135-ba57-0c346d925ef1/
+Traceback (most recent call last):
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/books/views/book_api.py", line 49, in book_detail
+    if not request.user== book.owner and isinstance(request.user, get_user_model()):
+                          ^^^^^^^^^^
+AttributeError: 'ReturnDict' object has no attribute 'owner'
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/book_api.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/permissions/permissions.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/permissions/permissions.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/permissions/permissions.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/permissions/permissions.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/permissions/permissions.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/book_api.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/book_api.py changed, reloading.
+ERROR:django.request:Internal Server Error: /api/v1/books/3777e335-1465-4135-ba57-0c346d925ef1/
+Traceback (most recent call last):
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/books/views/book_api.py", line 49, in book_detail
+    is_user_or_admin = is_user_or_admin(request, idx)
+                       ^^^^^^^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'is_user_or_admin' where it is not associated with a value
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/book_api.py changed, reloading.
+ERROR:django.request:Internal Server Error: /api/v1/books/3777e335-1465-4135-ba57-0c346d925ef1/
+Traceback (most recent call last):
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2117, in get_prep_value
+    return int(value)
+           ^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '3777e335-1465-4135-ba57-0c346d925ef1'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/books/views/book_api.py", line 49, in book_detail
+    has_permissions = is_user_or_admin(request, idx)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/books/permissions/permissions.py", line 8, in is_user_or_admin
+    book_obj = Book.objects.filter(id=book_id).first()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1476, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1494, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 1501, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1613, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1645, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1559, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/db/models/sql/query.py", line 1389, in build_lookup
+    lookup = lookup_class(lhs, rhs)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/db/models/lookups.py", line 30, in __init__
+    self.rhs = self.get_prep_lookup()
+               ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/db/models/lookups.py", line 364, in get_prep_lookup
+    return super().get_prep_lookup()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/db/models/lookups.py", line 88, in get_prep_lookup
+    return self.lhs.output_field.get_prep_value(self.rhs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/db/models/fields/__init__.py", line 2119, in get_prep_value
+    raise e.__class__(
+ValueError: Field 'id' expected a number but got '3777e335-1465-4135-ba57-0c346d925ef1'.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/permissions/permissions.py changed, reloading.
+INFO:books.helpers.logging_helper:Book Updated
+WARNING:django.request:Unauthorized: /api/v1/books/3777e335-1465-4135-ba57-0c346d925ef1/
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/project/settings.py changed, reloading.
+INFO:books.helpers.logging_helper:Email: user@user.com  :: Password: Password123
+INFO:books.helpers.logging_helper:Check here: Email: user@user.com Password: Password123
+INFO:books.helpers.logging_helper:Fetched the following user:: Arya shakya
+INFO:books.helpers.logging_helper:Book Updated
+INFO:books.helpers.logging_helper:Book Updated
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/permissions/permissions.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/permissions/permissions.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/permissions/permissions.py changed, reloading.
+WARNING:django.request:Unauthorized: /api/v1/books/3777e335-1465-4135-ba57-0c346d925ef1/
+INFO:books.helpers.logging_helper:Book Updated
+INFO:books.helpers.logging_helper:Serialized data : AuthorSerializer(data=<QueryDict: {'first_name': ['Balaram'], 'last_name': ['Neupane'], 'email': ['user66@user.com'], 'password': ['Password123']}>):
+    id = IntegerField(label='ID', read_only=True)
+    first_name = CharField(max_length=100)
+    last_name = CharField(max_length=100)
+    email = EmailField(max_length=100, validators=[<UniqueValidator(queryset=Author.objects.all())>])
+    password = CharField(max_length=64, write_only=True)
+INFO:books.helpers.logging_helper:Book Updated
+INFO:books.helpers.logging_helper:Book Updated
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/permissions/permissions.py changed, reloading.
+ERROR:django.request:Internal Server Error: /api/v1/books/3777e335-1465-4135-ba57-0c346d925ef1/
+Traceback (most recent call last):
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 511, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 423, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'books.builders.response_builders.ResponseBuilder'>`
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/views/book_api.py changed, reloading.
+WARNING:django.request:Unauthorized: /api/v1/books/3777e335-1465-4135-ba57-0c346d925ef1/
+INFO:books.helpers.logging_helper:Email: user@user.com  :: Password: Password123
+INFO:books.helpers.logging_helper:Check here: Email: user@user.com Password: Password123
+INFO:books.helpers.logging_helper:Fetched the following user:: Arya shakya
+INFO:books.helpers.logging_helper:Email: user6@user.com  :: Password: Password123
+INFO:books.helpers.logging_helper:Check here: Email: user6@user.com Password: Password123
+ERROR:django.request:Internal Server Error: /api/v1/login/
+Traceback (most recent call last):
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/books/views/user_api.py", line 47, in login
+    is_logged_in, auth_token = user_auth_service.login(email, password)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/books/services/author_auth_service.py", line 27, in login
+    user = author_service.get_author_by_email(email=email)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/books/services/author_service.py", line 15, in get_author_by_email
+    user = Author.objects.get(email=email)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/db/models/manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/work/learning/tasks/book_app2/.venv/lib/python3.12/site-packages/django/db/models/query.py", line 649, in get
+    raise self.model.DoesNotExist(
+books.models.user.Author.DoesNotExist: Author matching query does not exist.
+INFO:books.helpers.logging_helper:Email: user66@user.com  :: Password: Password123
+INFO:books.helpers.logging_helper:Check here: Email: user66@user.com Password: Password123
+INFO:books.helpers.logging_helper:Fetched the following user:: Balaram Neupane
+DEBUG:PIL.PngImagePlugin:STREAM b'IHDR' 16 13
+DEBUG:PIL.PngImagePlugin:STREAM b'sBIT' 41 4
+DEBUG:PIL.PngImagePlugin:b'sBIT' 41 4 (unknown)
+DEBUG:PIL.PngImagePlugin:STREAM b'tEXt' 57 25
+DEBUG:PIL.PngImagePlugin:STREAM b'tEXt' 94 47
+DEBUG:PIL.PngImagePlugin:STREAM b'IDAT' 153 7808
+DEBUG:PIL.Image:Importing BlpImagePlugin
+DEBUG:PIL.Image:Importing BmpImagePlugin
+DEBUG:PIL.Image:Importing BufrStubImagePlugin
+DEBUG:PIL.Image:Importing CurImagePlugin
+DEBUG:PIL.Image:Importing DcxImagePlugin
+DEBUG:PIL.Image:Importing DdsImagePlugin
+DEBUG:PIL.Image:Importing EpsImagePlugin
+DEBUG:PIL.Image:Importing FitsImagePlugin
+DEBUG:PIL.Image:Importing FliImagePlugin
+DEBUG:PIL.Image:Importing FpxImagePlugin
+DEBUG:PIL.Image:Image: failed to import FpxImagePlugin: No module named 'olefile'
+DEBUG:PIL.Image:Importing FtexImagePlugin
+DEBUG:PIL.Image:Importing GbrImagePlugin
+DEBUG:PIL.Image:Importing GifImagePlugin
+DEBUG:PIL.Image:Importing GribStubImagePlugin
+DEBUG:PIL.Image:Importing Hdf5StubImagePlugin
+DEBUG:PIL.Image:Importing IcnsImagePlugin
+DEBUG:PIL.Image:Importing IcoImagePlugin
+DEBUG:PIL.Image:Importing ImImagePlugin
+DEBUG:PIL.Image:Importing ImtImagePlugin
+DEBUG:PIL.Image:Importing IptcImagePlugin
+DEBUG:PIL.Image:Importing JpegImagePlugin
+DEBUG:PIL.Image:Importing Jpeg2KImagePlugin
+DEBUG:PIL.Image:Importing McIdasImagePlugin
+DEBUG:PIL.Image:Importing MicImagePlugin
+DEBUG:PIL.Image:Image: failed to import MicImagePlugin: No module named 'olefile'
+DEBUG:PIL.Image:Importing MpegImagePlugin
+DEBUG:PIL.Image:Importing MpoImagePlugin
+DEBUG:PIL.Image:Importing MspImagePlugin
+DEBUG:PIL.Image:Importing PalmImagePlugin
+DEBUG:PIL.Image:Importing PcdImagePlugin
+DEBUG:PIL.Image:Importing PcxImagePlugin
+DEBUG:PIL.Image:Importing PdfImagePlugin
+DEBUG:PIL.Image:Importing PixarImagePlugin
+DEBUG:PIL.Image:Importing PngImagePlugin
+DEBUG:PIL.Image:Importing PpmImagePlugin
+DEBUG:PIL.Image:Importing PsdImagePlugin
+DEBUG:PIL.Image:Importing QoiImagePlugin
+DEBUG:PIL.Image:Importing SgiImagePlugin
+DEBUG:PIL.Image:Importing SpiderImagePlugin
+DEBUG:PIL.Image:Importing SunImagePlugin
+DEBUG:PIL.Image:Importing TgaImagePlugin
+DEBUG:PIL.Image:Importing TiffImagePlugin
+DEBUG:PIL.Image:Importing WebPImagePlugin
+DEBUG:PIL.Image:Importing WmfImagePlugin
+DEBUG:PIL.Image:Importing XbmImagePlugin
+DEBUG:PIL.Image:Importing XpmImagePlugin
+DEBUG:PIL.Image:Importing XVThumbImagePlugin
+INFO:books.helpers.logging_helper:New book created
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/models/book.py changed, reloading.
+INFO:django.utils.autoreload:/home/work/learning/tasks/book_app2/books/models/book.py changed, reloading.
