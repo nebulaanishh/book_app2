@@ -8,7 +8,16 @@ from books.helpers.logging_helper import logger
 
 class BookService:
     def get_all_book(self, request, *args, **kwargs):
+        title = request.GET.get('title')
+        content = request.GET.get('content')
+        created_at = request.GET.get("created_at")
         books = Book.get_all_books(kwargs)
+        if title:
+            books = books.filter(title__icontains=title)
+        if content:
+            books = books.filter(content__icontains=content)
+        if created_at:
+            books = books.filter(created_at=created_at)
         serializer = BookSerializer(books, many=True)
         return serializer.data
 
