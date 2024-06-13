@@ -2,8 +2,6 @@ from builtins import object
 from rest_framework import status
 from rest_framework.response import Response
 
-from app.api import api
-
 
 class ResponseBuilder(object):
     """
@@ -76,7 +74,7 @@ class ResponseBuilder(object):
     def get_json(self):
         status_message = self.status_message
         if self.status_code != 1:
-            status_message = api.error_messages[self.status_code]
+            status_message = 1
 
         return {
             'status_code': self.status_code,
